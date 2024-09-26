@@ -15,3 +15,11 @@ def test_borrow_book():
     library.borrow_book("1234567890")
     assert not library.books[0].available
 
+def test_return_book():
+    library = Library()
+    book = Book(isbn="1234567890", title="Python 101", author="John Doe", year=2020)
+    library.add_book(book)
+    library.borrow_book("1234567890")
+    library.return_book("1234567890")
+    assert library.books[0].available
+
