@@ -31,4 +31,8 @@ class Library:
                 book.available = True
                 return
         raise Exception("Book not found or already available")
+    
+    def view_available_books(self):
+        return [book for book in self.books if book.available]
+
 
